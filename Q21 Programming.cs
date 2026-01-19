@@ -15,7 +15,18 @@ using System;
         public static void Run()
         {
             Console.WriteLine("Welcome to the Lucky Numbers program! Please enter two integers (m and n) separated by a space:");
-            string[] input = Console.ReadLine().Split();
+            string? line = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(line))
+            {
+                Console.WriteLine("Invalid input. Please enter two integers separated by a space.");
+                return;
+            }
+            string[] input = line.Split();
+            if (input.Length < 2)
+            {
+                Console.WriteLine("Invalid input. Please enter two integers separated by a space.");
+                return;
+            }
             int m = int.Parse(input[0]); // Start of range
             int n = int.Parse(input[1]); // End of range
             int count = 0; // Counter for lucky numbers
