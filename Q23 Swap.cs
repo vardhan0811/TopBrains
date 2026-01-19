@@ -8,7 +8,7 @@ class SwapUsingRef
     /// <summary>
     /// Runs the swap demonstration. Initializes two integers, displays their values before and after swapping.
     /// </summary>
-    static void Run()
+    public static void Run()
     {
         int a = 10;
         int b = 20;
